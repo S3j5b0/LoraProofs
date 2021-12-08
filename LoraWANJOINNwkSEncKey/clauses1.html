@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+                      <html>
+                    <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                    <title>ProVerif: clauses for query 1</title>
+                    <link rel="stylesheet" href="cssproverif.css">
+                                                                           </head>
+                                                                         <body>
+                                                                         <H1>Initial clauses</H1>
+
+<ul>
+
+<li><a name=clause0>Clause 0:</a> <span class="pred">attacker</span>(<span class="fun">two</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">two</span>.)</span><br>
+
+<li><a name=clause1>Clause 1:</a> <span class="pred">attacker</span>(<span class="fun">true</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">true</span>.)</span><br>
+
+<li><a name=clause2>Clause 2:</a> <span class="pred">attacker</span>(<span class="fun">three</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">three</span>.)</span><br>
+
+<li><a name=clause3>Clause 3:</a> <span class="pred">attacker</span>(<span class="var">v</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v_1</span>) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="fun">senc</span>(<span class="var">v</span>,<span class="var">v_1</span>))<br>
+<span class="explain">(The attacker applies function <span class="fun">senc</span>.)</span><br>
+
+<li><a name=clause4>Clause 4:</a> <span class="pred">attacker</span>(<span class="fun">internal_senc</span>(<span class="var">m_1</span>,<span class="var">k</span>,<span class="var">r</span>)) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">k</span>) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">m_1</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">sdecProb</span>.)</span><br>
+
+<li><a name=clause5>Clause 5:</a> <span class="pred">attacker</span>(<span class="fun">senc</span>(<span class="var">m_1</span>,<span class="var">k</span>)) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">k</span>) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">m_1</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">sdec</span>.)</span><br>
+
+<li><a name=clause6>Clause 6:</a> <span class="pred">attacker</span>(<span class="fun">one</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">one</span>.)</span><br>
+
+<li><a name=clause7>Clause 7:</a> <span class="pred">attacker</span>(<span class="var">v</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v_1</span>) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="fun">mac</span>(<span class="var">v</span>,<span class="var">v_1</span>))<br>
+<span class="explain">(The attacker applies function <span class="fun">mac</span>.)</span><br>
+
+<li><a name=clause8>Clause 8:</a> <span class="pred">attacker</span>(<span class="var">v</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v_1</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v_2</span>) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="fun">internal_senc</span>(<span class="var">v</span>,<span class="var">v_1</span>,<span class="var">v_2</span>))<br>
+<span class="explain">(The attacker applies function <span class="fun">internal_senc</span>.)</span><br>
+
+<li><a name=clause9>Clause 9:</a> <span class="pred">attacker</span>(<span class="fun">four</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">four</span>.)</span><br>
+
+<li><a name=clause10>Clause 10:</a> <span class="pred">attacker</span>(<span class="fun">false</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">false</span>.)</span><br>
+
+<li><a name=clause11>Clause 11:</a> <span class="pred">attacker</span>(<span class="var">v</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v_1</span>) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="fun">KgenSenc</span>(<span class="var">v</span>,<span class="var">v_1</span>))<br>
+<span class="explain">(The attacker applies function <span class="fun">KgenSenc</span>.)</span><br>
+
+<li><a name=clause12>Clause 12:</a> <span class="pred">attacker</span>(0)<br>
+<span class="explain">(The attacker applies function <span class="fun">0</span>.)</span><br>
+
+<li><a name=clause13>Clause 13:</a> <span class="pred">attacker</span>(<span class="var">v</span>) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">v</span> <span class="fun">+</span> 1)<br>
+<span class="explain">(The attacker applies function <span class="fun">+</span>.)</span><br>
+
+<li><a name=clause14>Clause 14:</a> <span class="pred">attacker</span>(<span class="var">v</span> <span class="fun">+</span> 1) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">v</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">- 1</span>.)</span><br>
+
+<li><a name=clause15>Clause 15:</a> <span class="pred">attacker</span>(<span class="var">v</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v_1</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v_2</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v_3</span>) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">v</span>,<span class="var">v_1</span>,<span class="var">v_2</span>,<span class="var">v_3</span>))<br>
+<span class="explain">(The attacker applies function <span class="fun">4-tuple</span>.)</span><br>
+
+<li><a name=clause16>Clause 16:</a> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">v</span>,<span class="var">v_1</span>,<span class="var">v_2</span>,<span class="var">v_3</span>)) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">v</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">1-proj-4-tuple</span>.)</span><br>
+
+<li><a name=clause17>Clause 17:</a> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">v</span>,<span class="var">v_1</span>,<span class="var">v_2</span>,<span class="var">v_3</span>)) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">v_1</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">2-proj-4-tuple</span>.)</span><br>
+
+<li><a name=clause18>Clause 18:</a> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">v</span>,<span class="var">v_1</span>,<span class="var">v_2</span>,<span class="var">v_3</span>)) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">v_2</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">3-proj-4-tuple</span>.)</span><br>
+
+<li><a name=clause19>Clause 19:</a> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">v</span>,<span class="var">v_1</span>,<span class="var">v_2</span>,<span class="var">v_3</span>)) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">v_3</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">4-proj-4-tuple</span>.)</span><br>
+
+<li><a name=clause20>Clause 20:</a> <span class="pred">attacker</span>(<span class="var">v</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v_1</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v_2</span>) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">v</span>,<span class="var">v_1</span>,<span class="var">v_2</span>))<br>
+<span class="explain">(The attacker applies function <span class="fun">3-tuple</span>.)</span><br>
+
+<li><a name=clause21>Clause 21:</a> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">v</span>,<span class="var">v_1</span>,<span class="var">v_2</span>)) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">v</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">1-proj-3-tuple</span>.)</span><br>
+
+<li><a name=clause22>Clause 22:</a> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">v</span>,<span class="var">v_1</span>,<span class="var">v_2</span>)) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">v_1</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">2-proj-3-tuple</span>.)</span><br>
+
+<li><a name=clause23>Clause 23:</a> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">v</span>,<span class="var">v_1</span>,<span class="var">v_2</span>)) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">v_2</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">3-proj-3-tuple</span>.)</span><br>
+
+<li><a name=clause24>Clause 24:</a> <span class="pred">attacker</span>(<span class="var">v</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v_1</span>) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">v</span>,<span class="var">v_1</span>))<br>
+<span class="explain">(The attacker applies function <span class="fun">2-tuple</span>.)</span><br>
+
+<li><a name=clause25>Clause 25:</a> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">v</span>,<span class="var">v_1</span>)) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">v</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">1-proj-2-tuple</span>.)</span><br>
+
+<li><a name=clause26>Clause 26:</a> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">v</span>,<span class="var">v_1</span>)) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">v_1</span>)<br>
+<span class="explain">(The attacker applies function <span class="fun">2-proj-2-tuple</span>.)</span><br>
+
+<li><a name=clause27>Clause 27:</a> <span class="pred">mess</span>(<span class="var">v</span>,<span class="var">v_1</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v</span>) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="var">v_1</span>)<br>
+<span class="explain">(The attacker can listen on all channels it has.)</span><br>
+
+<li><a name=clause28>Clause 28:</a> <span class="pred">attacker</span>(<span class="var">v</span>) <span class="conn">&amp;&amp;</span> <span class="pred">attacker</span>(<span class="var">v_1</span>) <span class="conn">-&gt;</span> <span class="pred">mess</span>(<span class="var">v</span>,<span class="var">v_1</span>)<br>
+<span class="explain">(The attacker can send messages it has on all channels it has.)</span><br>
+
+<li><a name=clause29>Clause 29:</a> <span class="pred">attacker</span>(<span class="fun">fail-any</span>)<br>
+<span class="explain">(Initial knowledge of the attacker.)</span><br>
+
+<li><a name=clause30>Clause 30:</a> <span class="pred">attacker</span>(<span class="name">disclosureC</span>[])<br>
+<span class="explain">(Initial knowledge of the attacker.)</span><br>
+
+<li><a name=clause31>Clause 31:</a> <span class="pred">attacker</span>(<span class="name">c</span>[])<br>
+<span class="explain">(Initial knowledge of the attacker.)</span><br>
+
+<li><a name=clause32>Clause 32:</a> <span class="pred">equal</span>(<span class="var">v</span>,<span class="var">v</span>)<br>
+<span class="explain">(Definition of equal.)</span><br>
+
+<li><a name=clause33>Clause 33:</a> <span class="pred">attacker</span>(<span class="var">new-name_1</span>)<br>
+<span class="explain">(The attacker can create new names.)</span><br>
+Abbreviations:
+<ul>
+
+<li><span class="var">new-name_1</span> <span class="conn">=</span> <span class="name">new-name</span>[!att = <span class="var">v</span>]
+</ul>
+
+<li><a name=clause34>Clause 34:</a> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="name">DevNonce</span>[]),<span class="name">NwkKey</span>[])))<br>
+<span class="explain">(The message <span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="name">DevNonce</span>[]),<span class="name">NwkKey</span>[])) may be sent to the attacker at output <a href="process_1.html#occ13" target="process" class="occ">{13}</a>.)</span><br>
+
+<li><a name=clause35>Clause 35:</a> <span class="pred">attacker</span>(<span class="fun">senc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="var">DevAddr_3</span>,<span class="var">tag2_2</span>),<span class="name">NwkKey</span>[])) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="fun">senc</span>(<span class="fun"></span>(<span class="name">m</span>[],<span class="var">FCntUp_2</span>),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[])),<span class="fun">mac</span>(<span class="fun"></span>(<span class="var">DevAddr_3</span>,<span class="var">FCntUp_2</span>,<span class="name">m</span>[]),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[]))))<br>
+<span class="explain">(If the message <span class="fun">senc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="var">DevAddr_3</span>,<span class="var">tag2_2</span>),<span class="name">NwkKey</span>[]) is received from the attacker at input <a href="process_1.html#occ14" target="process" class="occ">{14}</a>,<br>
+then the message <span class="fun"></span>(<span class="fun">senc</span>(<span class="fun"></span>(<span class="name">m</span>[],<span class="var">FCntUp_2</span>),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[])),<span class="fun">mac</span>(<span class="fun"></span>(<span class="var">DevAddr_3</span>,<span class="var">FCntUp_2</span>,<span class="name">m</span>[]),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[]))) may be sent to the attacker at output <a href="process_1.html#occ24" target="process" class="occ">{24}</a>.)</span><br>
+Abbreviations:
+<ul>
+
+<li><span class="var">FCntUp_2</span> <span class="conn">=</span> <span class="name">FCntUp</span>[!1 = <span class="var">@sid</span>,ciphetext = <span class="fun">senc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="var">DevAddr_3</span>,<span class="var">tag2_2</span>),<span class="name">NwkKey</span>[])]
+</ul>
+
+<li><a name=clause36>Clause 36:</a> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="var">DevNonce_3</span>,<span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="var">DevNonce_3</span>),<span class="name">NwkKey</span>[]))) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="fun">senc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="name">DevAddr</span>[],<span class="fun">mac</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="name">DevAddr</span>[]),<span class="name">NwkKey</span>[])),<span class="name">NwkKey</span>[]))<br>
+<span class="explain">(If the message <span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="var">DevNonce_3</span>,<span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="var">DevNonce_3</span>),<span class="name">NwkKey</span>[])) is received from the attacker at input <a href="process_1.html#occ31" target="process" class="occ">{31}</a>,<br>
+then the message <span class="fun">senc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="name">DevAddr</span>[],<span class="fun">mac</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="name">DevAddr</span>[]),<span class="name">NwkKey</span>[])),<span class="name">NwkKey</span>[]) may be sent to the attacker at output <a href="process_1.html#occ36" target="process" class="occ">{36}</a>.)</span><br>
+Abbreviations:
+<ul>
+
+<li><span class="var">JoinNonce_2</span> <span class="conn">=</span> <span class="name">JoinNonce_1</span>[tag = <span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="var">DevNonce_3</span>),<span class="name">NwkKey</span>[]),DevNonce_2 = <span class="var">DevNonce_3</span>]
+<li><span class="var">Home_NetID_2</span> <span class="conn">=</span> <span class="name">Home_NetID_1</span>[tag = <span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="var">DevNonce_3</span>),<span class="name">NwkKey</span>[]),DevNonce_2 = <span class="var">DevNonce_3</span>]
+</ul>
+
+<li><a name=clause37>Clause 37:</a> <span class="pred">attacker</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="var">DevNonce_3</span>,<span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="var">DevNonce_3</span>),<span class="name">NwkKey</span>[]))) <span class="conn">-&gt;</span> <span class="pred">attacker</span>(<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="var">DevNonce_3</span>,<span class="fun">four</span>),<span class="name">NwkKey</span>[]))<br>
+<span class="explain">(If the message <span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="var">DevNonce_3</span>,<span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="var">DevNonce_3</span>),<span class="name">NwkKey</span>[])) is received from the attacker at input <a href="process_1.html#occ31" target="process" class="occ">{31}</a>,<br>
+then the message <span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="var">DevNonce_3</span>,<span class="fun">four</span>),<span class="name">NwkKey</span>[]) may be sent to the attacker at output <a href="process_1.html#occ41" target="process" class="occ">{41}</a>.)</span><br>
+Abbreviations:
+<ul>
+
+<li><span class="var">JoinNonce_2</span> <span class="conn">=</span> <span class="name">JoinNonce_1</span>[tag = <span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="var">DevNonce_3</span>),<span class="name">NwkKey</span>[]),DevNonce_2 = <span class="var">DevNonce_3</span>]
+</ul>
+
+</ul>
+</body>
+</html>

@@ -199,7 +199,7 @@ let ED(devEUI : bitstring, appEUI : bitstring) =
 
 
 
-let AS(devEUI : bitstring, appEUI : bitstring) = 
+let JS(devEUI : bitstring, appEUI : bitstring) = 
     (* generate key pair *)
     new privEK_AS :exponent;
     let pubEK_AS = exp(g,privEK_AS) in
@@ -256,4 +256,4 @@ let AS(devEUI : bitstring, appEUI : bitstring) =
 process
     new devEUI :bitstring;
     new appEUI :bitstring;
-    ((ED(devEUI, appEUI)) | (AS(devEUI, appEUI)))
+    ((ED(devEUI, appEUI)) | (JS(devEUI, appEUI)))

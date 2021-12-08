@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+                      <html>
+                    <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                    <title>ProVerif: derivation for query 1</title>
+                    <link rel="stylesheet" href="cssproverif.css">
+                                                                           </head>
+                                                                         <body>
+                                                                         <H1>Explained derivation</H1>
+Abbreviations:
+<ul>
+
+<li><span class="var">FCntUp_2</span> <span class="conn">=</span> <span class="name">FCntUp</span>[!1 = <span class="var">@sid</span>,ciphetext = <span class="fun">senc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="var">DevAddr_3</span>,<span class="var">tag2_2</span>),<span class="name">NwkKey</span>[])]
+</ul>
+
+<ol>
+
+<li><a name=step1>The message <span class="name">NwkKey</span>[] may be sent to the attacker at output <a href="process_1.html#occ31" target="process" class="occ">{31}</a>.<br>
+<span class="pred">attacker</span>(<span class="name">NwkKey</span>[]).<br>
+
+<li><a name=step2>Using the function <span class="fun">four</span> the attacker may obtain <span class="fun">four</span>.<br>
+<span class="pred">attacker</span>(<span class="fun">four</span>).<br>
+
+<li><a name=step3>The message <span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="name">DevNonce</span>[]),<span class="name">NwkKey</span>[])) may be sent to the attacker at output <a href="process_1.html#occ13" target="process" class="occ">{13}</a>.<br>
+<span class="pred">attacker</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="name">DevNonce</span>[]),<span class="name">NwkKey</span>[]))).<br>
+
+<li><a name=step4>By <a href="#step3">3</a>, the attacker may know <span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="name">DevNonce</span>[]),<span class="name">NwkKey</span>[])).<br>
+Using the function <span class="fun">3-proj-4-tuple</span> the attacker may obtain <span class="name">DevNonce</span>[].<br>
+<span class="pred">attacker</span>(<span class="name">DevNonce</span>[]).<br>
+
+<li><a name=step5>By <a href="#step3">3</a>, the attacker may know <span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">mac</span>(<span class="fun"></span>(<span class="name">JoinEUI</span>[],<span class="name">DevEUI</span>[],<span class="name">DevNonce</span>[]),<span class="name">NwkKey</span>[])).<br>
+Using the function <span class="fun">1-proj-4-tuple</span> the attacker may obtain <span class="name">JoinEUI</span>[].<br>
+<span class="pred">attacker</span>(<span class="name">JoinEUI</span>[]).<br>
+
+<li><a name=step6>The attacker has some term <span class="var">JoinNonce_2</span>.<br>
+<span class="pred">attacker</span>(<span class="var">JoinNonce_2</span>).<br>
+
+<li><a name=step7>By <a href="#step6">6</a>, the attacker may know <span class="var">JoinNonce_2</span>.<br>
+By <a href="#step5">5</a>, the attacker may know <span class="name">JoinEUI</span>[].<br>
+By <a href="#step4">4</a>, the attacker may know <span class="name">DevNonce</span>[].<br>
+By <a href="#step2">2</a>, the attacker may know <span class="fun">four</span>.<br>
+Using the function <span class="fun">4-tuple</span> the attacker may obtain <span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>).<br>
+<span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>)).<br>
+
+<li><a name=step8>By <a href="#step7">7</a>, the attacker may know <span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>).<br>
+By <a href="#step1">1</a>, the attacker may know <span class="name">NwkKey</span>[].<br>
+Using the function <span class="fun">KgenSenc</span> the attacker may obtain <span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[]).<br>
+<span class="pred">attacker</span>(<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[])).<br>
+
+<li><a name=step9>The attacker has some term <span class="var">tag2_2</span>.<br>
+<span class="pred">attacker</span>(<span class="var">tag2_2</span>).<br>
+
+<li><a name=step10>The attacker has some term <span class="var">DevAddr_3</span>.<br>
+<span class="pred">attacker</span>(<span class="var">DevAddr_3</span>).<br>
+
+<li><a name=step11>The attacker has some term <span class="var">Home_NetID_2</span>.<br>
+<span class="pred">attacker</span>(<span class="var">Home_NetID_2</span>).<br>
+
+<li><a name=step12>By <a href="#step6">6</a>, the attacker may know <span class="var">JoinNonce_2</span>.<br>
+By <a href="#step11">11</a>, the attacker may know <span class="var">Home_NetID_2</span>.<br>
+By <a href="#step10">10</a>, the attacker may know <span class="var">DevAddr_3</span>.<br>
+By <a href="#step9">9</a>, the attacker may know <span class="var">tag2_2</span>.<br>
+Using the function <span class="fun">4-tuple</span> the attacker may obtain <span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="var">DevAddr_3</span>,<span class="var">tag2_2</span>).<br>
+<span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="var">DevAddr_3</span>,<span class="var">tag2_2</span>)).<br>
+
+<li><a name=step13>By <a href="#step12">12</a>, the attacker may know <span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="var">DevAddr_3</span>,<span class="var">tag2_2</span>).<br>
+By <a href="#step1">1</a>, the attacker may know <span class="name">NwkKey</span>[].<br>
+Using the function <span class="fun">senc</span> the attacker may obtain <span class="fun">senc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="var">DevAddr_3</span>,<span class="var">tag2_2</span>),<span class="name">NwkKey</span>[]).<br>
+<span class="pred">attacker</span>(<span class="fun">senc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="var">DevAddr_3</span>,<span class="var">tag2_2</span>),<span class="name">NwkKey</span>[])).<br>
+
+<li><a name=step14>The message <span class="fun">senc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="var">Home_NetID_2</span>,<span class="var">DevAddr_3</span>,<span class="var">tag2_2</span>),<span class="name">NwkKey</span>[]) that the attacker may have by <a href="#step13">13</a> may be received at input <a href="process_1.html#occ14" target="process" class="occ">{14}</a>.<br>
+So the message <span class="fun"></span>(<span class="fun">senc</span>(<span class="fun"></span>(<span class="name">m</span>[],<span class="var">FCntUp_2</span>),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[])),<span class="fun">mac</span>(<span class="fun"></span>(<span class="var">DevAddr_3</span>,<span class="var">FCntUp_2</span>,<span class="name">m</span>[]),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[]))) may be sent to the attacker at output <a href="process_1.html#occ24" target="process" class="occ">{24}</a>.<br>
+<span class="pred">attacker</span>(<span class="fun"></span>(<span class="fun">senc</span>(<span class="fun"></span>(<span class="name">m</span>[],<span class="var">FCntUp_2</span>),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[])),<span class="fun">mac</span>(<span class="fun"></span>(<span class="var">DevAddr_3</span>,<span class="var">FCntUp_2</span>,<span class="name">m</span>[]),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[])))).<br>
+
+<li><a name=step15>By <a href="#step14">14</a>, the attacker may know <span class="fun"></span>(<span class="fun">senc</span>(<span class="fun"></span>(<span class="name">m</span>[],<span class="var">FCntUp_2</span>),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[])),<span class="fun">mac</span>(<span class="fun"></span>(<span class="var">DevAddr_3</span>,<span class="var">FCntUp_2</span>,<span class="name">m</span>[]),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[]))).<br>
+Using the function <span class="fun">1-proj-2-tuple</span> the attacker may obtain <span class="fun">senc</span>(<span class="fun"></span>(<span class="name">m</span>[],<span class="var">FCntUp_2</span>),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[])).<br>
+<span class="pred">attacker</span>(<span class="fun">senc</span>(<span class="fun"></span>(<span class="name">m</span>[],<span class="var">FCntUp_2</span>),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[]))).<br>
+
+<li><a name=step16>By <a href="#step15">15</a>, the attacker may know <span class="fun">senc</span>(<span class="fun"></span>(<span class="name">m</span>[],<span class="var">FCntUp_2</span>),<span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[])).<br>
+By <a href="#step8">8</a>, the attacker may know <span class="fun">KgenSenc</span>(<span class="fun"></span>(<span class="var">JoinNonce_2</span>,<span class="name">JoinEUI</span>[],<span class="name">DevNonce</span>[],<span class="fun">four</span>),<span class="name">NwkKey</span>[]).<br>
+Using the function <span class="fun">sdec</span> the attacker may obtain <span class="fun"></span>(<span class="name">m</span>[],<span class="var">FCntUp_2</span>).<br>
+<span class="pred">attacker</span>(<span class="fun"></span>(<span class="name">m</span>[],<span class="var">FCntUp_2</span>)).<br>
+
+<li><a name=step17>By <a href="#step16">16</a>, the attacker may know <span class="fun"></span>(<span class="name">m</span>[],<span class="var">FCntUp_2</span>).<br>
+Using the function <span class="fun">1-proj-2-tuple</span> the attacker may obtain <span class="name">m</span>[].<br>
+<span class="pred">attacker</span>(<span class="name">m</span>[]).<br>
+
+<li><a name=step18>By <a href="#step17">17</a>, <span class="pred">attacker</span>(<span class="name">m</span>[]).<br>
+The goal is reached, represented in the following fact:<br>
+<span class="pred">attacker</span>(<span class="name">m</span>[]).<br>
+
+</ol>
+</body>
+</html>

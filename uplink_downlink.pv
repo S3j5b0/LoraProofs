@@ -97,14 +97,8 @@ event gotSckAS(ratchKey).
 
  
 
-query m : bitstring;
-    event (ASsend(m))==> event (EDreceive(m)).
-
-
-
-query m : bitstring;
-    event (EDsend(m))==> event (ASreceive(m)).
-
+query msg : bitstring;
+    event (EDreceive(msg)) ==> event (ASsend(msg)). 
 
 
 
