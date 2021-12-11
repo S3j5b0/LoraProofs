@@ -48,7 +48,7 @@ event gotSckAS(ratchKey).
 
 query attacker(new message_i_up).
 
-query attacker(new message_i).
+query attacker(new message_i_down).
 
 event sendmsg(bitstring).
 event rcvmsg(bitstring).
@@ -98,6 +98,7 @@ let ED(downlinkRatchet_Seed0 : bitstring, uplinkRatchet_Seed0 :bitstring, DHshar
 
         let mkSK_i_up = ratchetKey(DHsharekey_0, seed_in_up) in
         let seed_i_up = ratchetSeed(DHsharekey_0, seed_in_up) in
+        out(disclosurechannel,mkSK_0_up);
         new message_i_up : bitstring;
         event EDsend(message_i_up);
         out(store_downlink_ED, (mkSK_i_up, seed_0_up));
@@ -137,10 +138,10 @@ let AS(downlinkRatchet_Seed0 : bitstring, uplinkRatchet_Seed0 :bitstring, DHshar
         let mkSK_i_down = ratchetKey(DHsharekey_0, seed_storedown) in
         
         let seed_i_SCKdown = ratchetSeed(DHsharekey_0, seed_storedown) in
-        new message_i : bitstring;
-        event ASsend(message_i);
+        new message_i_down : bitstring;
+        event ASsend(message_i_down);
         (*send next message and send to own channel  *)
-        out(downlink, senc(message_i, mkSK_i_down));
+        out(downlink, senc(message_i_down, mkSK_i_down));
         out(store_downlink_AS, (mkSK_i_down, seed_i_SCKdown));
         
         in(uplink, C_i_up:bitstring);

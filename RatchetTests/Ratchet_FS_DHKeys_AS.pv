@@ -48,7 +48,7 @@ event gotSckAS(ratchKey).
 
 query attacker(new message_i_up).
 
-query attacker(new message_i).
+query attacker(new message_i_down).
 
 event sendmsg(bitstring).
 event rcvmsg(bitstring).
@@ -99,6 +99,8 @@ let ED(downlinkRatchet_Seed0 : bitstring, uplinkRatchet_Seed0 :bitstring, DHshar
         let mkSK_i_up = ratchetKey(DHsharekey_0, seed_in_up) in
         let seed_i_up = ratchetSeed(DHsharekey_0, seed_in_up) in
         new message_i_up : bitstring;
+
+        
         event EDsend(message_i_up);
         out(store_downlink_ED, (mkSK_i_up, seed_0_up));
         out(uplink, senc(message_i_up,mkSK_i_up)))).
@@ -137,10 +139,12 @@ let AS(downlinkRatchet_Seed0 : bitstring, uplinkRatchet_Seed0 :bitstring, DHshar
         let mkSK_i_down = ratchetKey(DHsharekey_0, seed_storedown) in
         
         let seed_i_SCKdown = ratchetSeed(DHsharekey_0, seed_storedown) in
-        new message_i : bitstring;
-        event ASsend(message_i);
+        new message_i_down : bitstring;
+        event ASsend(message_i_down);
+        (* disclose session key of last round *)
+
         (*send next message and send to own channel  *)
-        out(downlink, senc(message_i, mkSK_i_down));
+        out(downlink, senc(message_i_down, mkSK_i_down));
         out(store_downlink_AS, (mkSK_i_down, seed_i_SCKdown));
         
         in(uplink, C_i_up:bitstring);
@@ -150,6 +154,7 @@ let AS(downlinkRatchet_Seed0 : bitstring, uplinkRatchet_Seed0 :bitstring, DHshar
 
         let mkSK_i_up = ratchetKey(DHsharekey_0, seed_storeup) in
         let seed_i_up = ratchetSeed(DHsharekey_0, seed_storeup) in
+
         out(store_downlink_AS, (mkSK_i_up,seed_i_up))
         )).
 
@@ -165,6 +170,7 @@ process
     let pubEK_ED = exp(g,privEK_ED) in
 
 
+
     new downlinkRatchet_SeedAS : bitstring;
     new downlinkRatchet_SeedED : bitstring;
     new uplinkRatchet_SeedAS : bitstring;
@@ -177,3 +183,4 @@ process
     let DHsharekey_AS = exp(pubEK_ED,privEK_AS ) in  
 
     ((ED(downlinkRatchet_SeedED, uplinkRatchet_SeedED, DHsharekey_ED )) | (AS(downlinkRatchet_SeedAS, uplinkRatchet_SeedAS,DHsharekey_AS )))
+    | phase 1; out(disclosurechannel, privEK_AS)
