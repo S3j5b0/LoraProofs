@@ -95,19 +95,13 @@ event ASsend(bitstring).
 event gotSckED(ratchKey).
 event gotSckAS(ratchKey).
 
- 
-
-query msg : bitstring;
-    event (EDreceive(msg)) ==> event (ASsend(msg)). 
-
-
 
 event sendmsg(bitstring).
 event rcvmsg(bitstring).
 
 
-
-
+query attacker(new message_i_up).
+query attacker(new message_i_up).
 free c :channel.
 free downlink : channel.
 free uplink : channel.
@@ -283,9 +277,9 @@ let AS(devEUI : bitstring, appEUI : bitstring) =
         let mkSK_i_down = ratchetKey(DHsharekey_0, seed_storedown) in
         let seed_i_SCKdown = ratchetSeed(DHsharekey_0, seed_storedown) in
         new message_i : bitstring;
-        event ASsend(message_i);
+        event ASsend(message_i_down);
         (*send next message and send to own channel  *)
-        out(downlink, (mkSK_i_down, senc(message_i, mkSK_i_down)));
+        out(downlink,  senc(message_i_down, mkSK_i_down));
         out(store_downlink_AS, (mkSK_i_down, seed_i_SCKdown));
         
         in(uplink, C_i_up:bitstring);

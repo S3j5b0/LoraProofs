@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+                      <html>
+                    <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                    <title>ProVerif: derivation for query 3</title>
+                    <link rel="stylesheet" href="cssproverif.css">
+                                                                           </head>
+                                                                         <body>
+                                                                         <H1>Explained derivation</H1>
+
+<ol>
+
+<li><a name=step1>The message <span class="fun"></span>(<span class="fun">exp</span>(<span class="fun">g</span>,<span class="name">privEK_ED</span>[]),<span class="name">devEUI</span>[],<span class="name">appEUI</span>[]) may be sent to the attacker at output <a href="process_1.html#occ8" target="process" class="occ">{8}</a>.<br>
+<span class="pred">attacker</span>(<span class="fun"></span>(<span class="fun">exp</span>(<span class="fun">g</span>,<span class="name">privEK_ED</span>[]),<span class="name">devEUI</span>[],<span class="name">appEUI</span>[])).<br>
+
+<li><a name=step2>By <a href="#step1">1</a>, the attacker may know <span class="fun"></span>(<span class="fun">exp</span>(<span class="fun">g</span>,<span class="name">privEK_ED</span>[]),<span class="name">devEUI</span>[],<span class="name">appEUI</span>[]).<br>
+Using the function <span class="fun">3-proj-3-tuple</span> the attacker may obtain <span class="name">appEUI</span>[].<br>
+<span class="pred">attacker</span>(<span class="name">appEUI</span>[]).<br>
+
+<li><a name=step3>By <a href="#step1">1</a>, the attacker may know <span class="fun"></span>(<span class="fun">exp</span>(<span class="fun">g</span>,<span class="name">privEK_ED</span>[]),<span class="name">devEUI</span>[],<span class="name">appEUI</span>[]).<br>
+Using the function <span class="fun">2-proj-3-tuple</span> the attacker may obtain <span class="name">devEUI</span>[].<br>
+<span class="pred">attacker</span>(<span class="name">devEUI</span>[]).<br>
+
+<li><a name=step4>The attacker has some term <span class="var">pubEK_ED_2</span>.<br>
+<span class="pred">attacker</span>(<span class="var">pubEK_ED_2</span>).<br>
+
+<li><a name=step5>By <a href="#step4">4</a>, the attacker may know <span class="var">pubEK_ED_2</span>.<br>
+By <a href="#step3">3</a>, the attacker may know <span class="name">devEUI</span>[].<br>
+By <a href="#step2">2</a>, the attacker may know <span class="name">appEUI</span>[].<br>
+Using the function <span class="fun">3-tuple</span> the attacker may obtain <span class="fun"></span>(<span class="var">pubEK_ED_2</span>,<span class="name">devEUI</span>[],<span class="name">appEUI</span>[]).<br>
+<span class="pred">attacker</span>(<span class="fun"></span>(<span class="var">pubEK_ED_2</span>,<span class="name">devEUI</span>[],<span class="name">appEUI</span>[])).<br>
+
+<li><a name=step6>The attacker has some term <span class="var">ciphertext_6</span>.<br>
+<span class="pred">attacker</span>(<span class="var">ciphertext_6</span>).<br>
+
+<li><a name=step7>The message <span class="fun"></span>(<span class="var">pubEK_ED_2</span>,<span class="name">devEUI</span>[],<span class="name">appEUI</span>[]) that the attacker may have by <a href="#step5">5</a> may be received at input <a href="process_1.html#occ56" target="process" class="occ">{56}</a>.<br>
+The message <span class="var">ciphertext_6</span> that the attacker may have by <a href="#step6">6</a> may be received at input <a href="process_1.html#occ72" target="process" class="occ">{72}</a>.<br>
+So event <span class="fun">ASgetmessage3</span> may be executed at <a href="process_1.html#occ73" target="process" class="occ">{73}</a>.<br>
+<span class="pred">end</span>(<span class="fun">ASgetmessage3</span>).<br>
+
+<li><a name=step8>By <a href="#step7">7</a>, <span class="pred">end</span>(<span class="fun">ASgetmessage3</span>).<br>
+The goal is reached, represented in the following fact:<br>
+<span class="pred">end</span>(<span class="fun">ASgetmessage3</span>).<br>
+
+</ol>
+</body>
+</html>

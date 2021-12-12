@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+                      <html>
+                    <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                    <title>ProVerif: main result page</title>
+                    <link rel="stylesheet" href="cssproverif.css">
+                                                                           </head>
+                                                                         <body>
+                                                                         <H1>ProVerif results</H1>
+<A HREF="eq.html">Equations & Destructors</A><br>
+<A HREF="process_0.html" TARGET="process">Process 0</A> (that is, the initial process)<br>
+<UL>
+<LI><A HREF="process_1.html" TARGET="process">Process 1</A> (that is, <A HREF="process_0.html" TARGET="process">process 0</A>, with let moved downwards)<br>
+<UL> <LI><span class="query">Query event(<span class="fun">ASgetmessage1</span>) <span class="conn">==&gt;</span> event(<span class="fun">EDsendmessage1</span>) in <A HREF="process_1.html" TARGET="process">process 1</A>.<br>
+</span>
+<A HREF="clauses1.html" TARGET="clauses">Clauses</A><br>
+<A HREF="compclauses1.html">Completed clauses</A><br>
+<UL>
+<LI>goal reachable: <span class="pred">end</span>(<span class="fun">ASgetmessage1</span>)<br>
+<A HREF="derivation1.html">Derivation</A> <A HREF="derivationexplained1.html">Explained derivation</A><br>
+<A HREF="unifyDeriv1.html" TARGET="unifderiv">Unify derivation</A><br>
+<A HREF="trace1.html">Trace</A><br>
+<A HREF="trace1.pdf">Trace graph</A><br>
+</UL>
+<span class="result">RESULT event(<span class="fun">ASgetmessage1</span>) <span class="conn">==&gt;</span> event(<span class="fun">EDsendmessage1</span>) is <span class="falseresult">false</span>.</span><br>
+<LI><span class="query">Query event(<span class="fun">EDgetmessage2</span>) <span class="conn">==&gt;</span> event(<span class="fun">ASsendmesage2</span>) in <A HREF="process_1.html" TARGET="process">process 1</A>.<br>
+</span>
+<A HREF="clauses2.html" TARGET="clauses">Clauses</A><br>
+<A HREF="compclauses2.html">Completed clauses</A><br>
+<UL>
+<LI>goal reachable: <span class="pred">end</span>(<span class="fun">EDgetmessage2</span>)<br>
+<A HREF="derivation2.html">Derivation</A> <A HREF="derivationexplained2.html">Explained derivation</A><br>
+<A HREF="unifyDeriv2.html" TARGET="unifderiv">Unify derivation</A><br>
+<A HREF="trace2.html">Trace</A><br>
+<A HREF="trace2.pdf">Trace graph</A><br>
+</UL>
+<span class="result">RESULT event(<span class="fun">EDgetmessage2</span>) <span class="conn">==&gt;</span> event(<span class="fun">ASsendmesage2</span>) is <span class="falseresult">false</span>.</span><br>
+<LI><span class="query">Query event(<span class="fun">ASgetmessage3</span>) <span class="conn">==&gt;</span> event(<span class="fun">EDsendmessage3</span>) in <A HREF="process_1.html" TARGET="process">process 1</A>.<br>
+</span>
+<A HREF="clauses3.html" TARGET="clauses">Clauses</A><br>
+<A HREF="compclauses3.html">Completed clauses</A><br>
+<UL>
+<LI>goal reachable: <span class="pred">end</span>(<span class="fun">ASgetmessage3</span>)<br>
+<A HREF="derivation3.html">Derivation</A> <A HREF="derivationexplained3.html">Explained derivation</A><br>
+<A HREF="unifyDeriv3.html" TARGET="unifderiv">Unify derivation</A><br>
+<A HREF="trace3.html">Trace</A><br>
+<A HREF="trace3.pdf">Trace graph</A><br>
+</UL>
+<span class="result">RESULT event(<span class="fun">ASgetmessage3</span>) <span class="conn">==&gt;</span> event(<span class="fun">EDsendmessage3</span>) is <span class="falseresult">false</span>.</span><br>
+<LI><span class="query">Query event(<span class="fun">EDgetmessage4</span>(<span class="var">m</span>)) <span class="conn">==&gt;</span> event(<span class="fun">ASsendmesage4</span>(<span class="var">m</span>)) in <A HREF="process_1.html" TARGET="process">process 1</A>.<br>
+</span>
+<A HREF="clauses4.html" TARGET="clauses">Clauses</A><br>
+<A HREF="compclauses4.html">Completed clauses</A><br>
+<UL>
+<LI>goal reachable: <span class="pred">attacker</span>(<span class="var">m</span>) <span class="conn">-&gt;</span> <span class="pred">end</span>(<span class="fun">EDgetmessage4</span>(<span class="var">m</span>))<br>
+<A HREF="derivation4.html">Derivation</A> <A HREF="derivationexplained4.html">Explained derivation</A><br>
+<A HREF="unifyDeriv4.html" TARGET="unifderiv">Unify derivation</A><br>
+<A HREF="trace4.html">Trace</A><br>
+<A HREF="trace4.pdf">Trace graph</A><br>
+</UL>
+<span class="result">RESULT event(<span class="fun">EDgetmessage4</span>(<span class="var">m</span>)) <span class="conn">==&gt;</span> event(<span class="fun">ASsendmesage4</span>(<span class="var">m</span>)) is <span class="falseresult">false</span>.</span><br>
+</UL> </UL>
+<br>
+<HR>
+<H2>Verification summary:</H2>
+<UL>
+<LI>Query event(<span class="fun">ASgetmessage1</span>) <span class="conn">==&gt;</span> event(<span class="fun">EDsendmessage1</span>) is <span class="falseresult">false</span>.
+<LI>Query event(<span class="fun">EDgetmessage2</span>) <span class="conn">==&gt;</span> event(<span class="fun">ASsendmesage2</span>) is <span class="falseresult">false</span>.
+<LI>Query event(<span class="fun">ASgetmessage3</span>) <span class="conn">==&gt;</span> event(<span class="fun">EDsendmessage3</span>) is <span class="falseresult">false</span>.
+<LI>Query event(<span class="fun">EDgetmessage4</span>(<span class="var">m</span>)) <span class="conn">==&gt;</span> event(<span class="fun">ASsendmesage4</span>(<span class="var">m</span>)) is <span class="falseresult">false</span>.
+</UL><HR>
+</body>
+</html>

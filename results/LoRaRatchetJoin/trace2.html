@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+                      <html>
+                    <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                    <title>ProVerif: trace for query 2</title>
+                    <link rel="stylesheet" href="cssproverif.css">
+                                                                           </head>
+                                                                         <body>
+                                                                         <H1>Trace</H1>
+<span class="keyword">new</span> <span class="name">devEUI</span>: <span class="type">bitstring</span> creating <span class="name">devEUI_3</span> at <a href="process_1.html#occ1" target="process" class="occ">{1}</a><br>
+<br>
+<span class="keyword">new</span> <span class="name">appEUI</span>: <span class="type">bitstring</span> creating <span class="name">appEUI_3</span> at <a href="process_1.html#occ2" target="process" class="occ">{2}</a><br>
+<br>
+<span class="keyword">new</span> <span class="name">privEK_AS</span>: <span class="type">exponent</span> creating <span class="name">privEK_AS_1</span> at <a href="process_1.html#occ54" target="process" class="occ">{54}</a><br>
+<br>
+<span class="keyword">new</span> <span class="name">privEK_ED</span>: <span class="type">exponent</span> creating <span class="name">privEK_ED_1</span> at <a href="process_1.html#occ5" target="process" class="occ">{5}</a><br>
+<br>
+<span class="keyword">event</span> <span class="fun">EDsendmessage1</span> at <a href="process_1.html#occ7" target="process" class="occ">{7}</a><br>
+<br>
+<span class="keyword">out</span>(<span class="name">c</span>, <span class="fun"></span>(<span class="var">~M</span>,<span class="var">~M_1</span>,<span class="var">~M_2</span>)) with <span class="var">~M</span> = <span class="fun">exp</span>(<span class="fun">g</span>,<span class="name">privEK_ED_1</span>), <span class="var">~M_1</span> = <span class="name">devEUI_3</span>, <span class="var">~M_2</span> = <span class="name">appEUI_3</span> at <a href="process_1.html#occ8" target="process" class="occ">{8}</a><br>
+<br>
+<span class="keyword">in</span>(<span class="name">c</span>, <span class="fun"></span>(<span class="name">a</span>,<span class="var">~M_2</span>,<span class="name">a_1</span>)) with <span class="var">~M_2</span> = <span class="name">appEUI_3</span> at <a href="process_1.html#occ10" target="process" class="occ">{10}</a><br>
+<br>
+<span class="keyword">event</span> <span class="fun">EDgetmessage2</span> at <a href="process_1.html#occ11" target="process" class="occ">{11}</a> (goal)<br>
+<br>
+The event <span class="fun">EDgetmessage2</span> is executed at <a href="process_1.html#occ11" target="process" class="occ">{11}</a>.<br>
+A trace has been found.<br>
+</body>
+</html>
