@@ -15,12 +15,7 @@ const four : bitstring.
 (* type skey. *)
 type coins.
 (* probabilistic  Symmetric encryption *)
-fun internal_senc(bitstring , key , coins): bitstring.
 
-reduc forall m:bitstring , k:key , r:coins;
-   sdecProb(internal_senc(m,k,r),k) = m.
-
-letfun sencDET(x:bitstring,y:key) = new r: coins; internal_senc(x,y,r).
 (* Deterministic symmetric encryption *)
 
 fun senc(bitstring, key): bitstring.
