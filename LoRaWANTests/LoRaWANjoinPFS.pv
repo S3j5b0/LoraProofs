@@ -69,10 +69,10 @@ let JS(AppKey :key, NwkKey :key,DevEUI :bitstring, JoinEUI :bitstring, DevAddr :
     (* 1. Make handshake *)
     in(c,(=JoinEUI, =DevEUI, DevNonce : bitstring, tag: bitstring));
     if mac((JoinEUI, DevEUI,DevNonce), NwkKey) = tag then
-    new JoinNonce : bitstring; (*A incrementing counter-nonce, perhaps another construction should be used for this *)
+    new JoinNonce : bitstring; (*A incrementing counter-nonce *)
     new Home_NetID : bitstring;
     let tag2 : bitstring = mac((JoinNonce,Home_NetID, DevAddr), NwkKey) in
-    out(c,senc((JoinNonce, Home_NetID, DevAddr, tag2),NwkKey)); (*using deterministic senc function, maybe wrong *)
+    out(c,senc((JoinNonce, Home_NetID, DevAddr, tag2),NwkKey)); 
     (*2 . handshake done, now generate keys *)
     let FNwkSIntKey = KgenSenc((JoinNonce, JoinEUI, DevNonce,one), NwkKey) in
     let SnwkSIntKey = KgenSenc((JoinNonce, JoinEUI, DevNonce, three), NwkKey) in
