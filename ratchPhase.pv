@@ -3,8 +3,7 @@ set verboseClauses = short.
 
 free plaintext:bitstring [private].
 
-(* I start by defining some constants that I suspect might by of significance, or maybe I just use them for certain values
-to not be exactly the same  *)
+(* defining constants *)
 const K_2m_constantstring : bitstring.
 const IV_2m_constantstring : bitstring.
 const K_3m_constantstring : bitstring.
