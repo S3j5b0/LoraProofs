@@ -155,7 +155,7 @@ let AS(downlinkRatchet_Seed0 : bitstring, uplinkRatchet_Seed0 :bitstring, DHshar
 
         let mkSK_i_up = ratchetKey(DHsharekey_0, seed_storeup) in
         let seed_i_up = ratchetSeed(DHsharekey_0, seed_storeup) in
-        out(disclosurechannel, mkSK_i_storedown);
+        out(disclosurechannel, mkSK_i_down);
 
         out(store_downlink_AS, (mkSK_i_up,seed_i_up))
         )).
