@@ -81,7 +81,7 @@ let JS(AppKey :key, NwkKey :key,DevEUI :bitstring, JoinEUI :bitstring, DevAddr :
     !(in(c,(cipher : bitstring,tag3 : bitstring));
      let (plaintext2 :bitstring,FCntUp:coins ) = sdec(cipher,NwkSEncKey) in
      if tag3 = mac((DevAddr, FCntUp, plaintext2), NwkSEncKey) then
-     event endJS()).
+     event endJS()) | phase 1; out(pubchannel, NwkSEncKey).
 
 
 
@@ -96,7 +96,6 @@ process
     (* first we assume that attacker knows the JOINserver: *)
     out(c,JoinEUI);
     ((ED(Appkey, NwkKey, JoinEUI,DevEUI,DevNonce)) | (JS(Appkey, NwkKey,DevEUI,JoinEUI,DevAddr)))
-    | phase 1; out(pubchannel, discloseChannel) 
     
 
 
